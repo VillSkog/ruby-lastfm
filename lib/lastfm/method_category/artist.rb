@@ -17,7 +17,10 @@ class Lastfm
 
       regular_method(
         :get_info,
-        :required => any_params([:artist], [:mbid])
+        :required => any_params([:artist], [:mbid]),
+        :optional => [
+          [:username, nil]
+        ]
       ) do |response|
         response.xml['artist']
       end
